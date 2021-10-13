@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@page import="co.edu.unbosque.model.Usuarios"%>
+<%@page import="co.edu.unbosque.model.Proveedores"%>
 <%@page import="java.util.ArrayList"%>
 
 <!DOCTYPE html>
@@ -12,7 +12,7 @@
 	integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
 	crossorigin="anonymous">
 <meta charset="ISO-8859-1">
-<title>Creacion de Usuario</title>
+<title>Creación de Proveedores</title>
 </head>
 <body>
 	<div class="container">
@@ -20,42 +20,42 @@
 			<div class="row">
 				<div class="col-md-12 col-lg-12 offset-lg-0"
 					style="background: var(- -bs-secondary); color: var(- -bs-gray-100);">
-					<h1>Mantenimiento Usuarios</h1>
+					<h1>Mantenimiento Proveedores</h1>
 				</div>
 			</div>
 			<div class="row">
 				<div class="card col-md-4">
 					<div class="card-body">
-						<h5 class="card-title">Usuarios</h5>
+						<h5 class="card-title">Proveedores</h5>
 						<h6 class="card-subtitle mb-2 text-muted">En este panel
-							podras gestionar los datos de los usuarios del sistema</h6>
+							podras gestionar los datos de los clientes del sistema</h6>
 						<div>
 							<form class="form-sign" method="get" action="Controlador">
 
 								<div class="form-group">
-									<input type="hidden" name="menu" value="Usuarios"> <label>Cedula:</label>
+									<input type="hidden" name="menu" value="Clientes"> <label>NIT:</label>
 									<input type="text" name="txtcedula" class="form-control"
-										value="${usuarioSeleccionado.getCedula_usuario()}">
+										value="${proveedoresSeleccionado.getNit_proveedor()}">
 								</div>
 								<div class="form-group">
-									<label>Nombre:</label> 
+									<label>Razón Social / Nombre:</label> 
 									<input type="text" name="txtnombre"	class="form-control"
-										value="${usuarioSeleccionado.getNombre_usuario()}">
+										value="${proveedoresSeleccionado.getDireccion_proveedor()}">
 								</div>
 								<div class="form-group">
-									<label>Email:</label> <input type="text" name="txtemail"
+									<label>Ciudad:</label> <input type="text" name="txtemail"
 										class="form-control"
-										value="${usuarioSeleccionado.getEmail_usuario()}">
+										value="${proveedoresSeleccionado.getCiudad_proveedor()}">
 								</div>
 								<div class="form-group">
-									<label>Usuario:</label> <input type="text" name="txtusuario"
+									<label>Dirección:</label> <input type="text" name="txtdireccion"
 										class="form-control"
-										value="${usuarioSeleccionado.getUsuario()}">
+										value="${proveedoresSeleccionado.getDireccion_proveedor()}">
 								</div>
 								<div class="form-group">
-									<label>Password:</label> <input type="password"
-										name="txtpassword" class="form-control"
-										value="${usuarioSeleccionado.getPassword()}">
+									<label>Teléfono:</label> <input type="telefono"
+										name="txttelefono" class="form-control"
+										value="${proveedoresSeleccionado.getTelefono_proveedor()}">
 								</div>
 								<input type="submit" class="btn btn-primary" name="accion"
 									value="Agregar"> <input type="submit"
@@ -68,28 +68,28 @@
 					<table class="table-responsive">
 						<thead class="thead-dark">
 							<tr>
-								<th scope="col">Cedula</th>
-								<th scope="col">Nombre</th>
-								<th scope="col">Email</th>
-								<th scope="col">Usuario</th>
-								<th scope="col">Password</th>
+								<th scope="col">NIT</th>
+								<th scope="col">Razón Social / Nombre</th>
+								<th scope="col">Ciudad</th>
+								<th scope="col">Dirección</th>
+								<th scope="col">Telefono</th>
 							</tr>
 						</thead>
 						<tbody>
-							<% ArrayList<Usuarios> lista= (ArrayList<Usuarios>) request.getAttribute("lista");
-							for (Usuarios usuario:lista){
+							<% ArrayList<Proveedores> lista = (ArrayList<Proveedores>)request.getAttribute("lista");
+							for (Proveedores proveedores:lista){
 							%>
 
 							<tr>
-								<td><%=usuario.getCedula_usuario()%></td>
-								<td><%=usuario.getNombre_usuario()%></td>
-								<td><%=usuario.getEmail_usuario()%></td>
-								<td><%=usuario.getUsuario()%></td>
-								<td><%=usuario.getPassword()%></td>
+								<td><%=proveedores.getNit_proveedor()%></td>
+								<td><%=proveedores.getNombre_proveedor()%></td>
+								<td><%=proveedores.getCiudad_proveedor()%></td>
+								<td><%=proveedores.getDireccion_proveedor()%></td>
+								<td><%=proveedores.getTelefono_proveedor()%></td>
 								<td><a class="btn btn-warning"
-									href="Controlador?menu=Usuarios&accion=Cargar&id=<%=usuario.getCedula_usuario()%>">Editar</a>
+									href="Controlador?menu=Clientes&accion=Cargar&id=<%=proveedores.getNit_proveedor()%>">Editar</a>
 									<a class="btn btn-danger"
-									href="Controlador?menu=Usuarios&accion=Eliminar&id=<%=usuario.getCedula_usuario()%>">Eliminar</a>
+									href="Controlador?menu=Clientes&accion=Eliminar&id=<%=proveedores.getNit_proveedor()%>">Eliminar</a>
 								</td>
 							</tr>
 							<%

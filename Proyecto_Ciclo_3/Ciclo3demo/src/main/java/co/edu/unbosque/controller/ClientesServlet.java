@@ -36,8 +36,8 @@ public class ClientesServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		String listar = request.getParameter("Listar");
-        String agregar = request.getParameter("crear");
-        String eliminar = request.getParameter("eliminar");
+        String agregar = request.getParameter("Crear");
+        String eliminar = request.getParameter("Eliminar");
         if (agregar != null) {
         	agregarCliente(request, response);
         }
@@ -45,6 +45,10 @@ public class ClientesServlet extends HttpServlet {
         if (listar != null) {
         	listarClientes(request, response);
         }
+        
+//        if (eliminar != null) {
+//        	EliminarClientes(request, response);
+//        }
 	}
 
 	/**
@@ -57,10 +61,10 @@ public class ClientesServlet extends HttpServlet {
 	
 	public void agregarCliente(HttpServletRequest request, HttpServletResponse response) {
 		Clientes cliente = new Clientes();
-		cliente.setCedula_cliente(request.getParameter("cedula"));
-		cliente.setDireccion_cliente(request.getParameter("direccion"));
-		cliente.setEmail_cliente(request.getParameter("email"));
+		cliente.setCedula_cliente(Long.parseLong(request.getParameter("cedula")));
 		cliente.setNombre_cliente(request.getParameter("nombre"));
+		cliente.setEmail_cliente(request.getParameter("email"));
+		cliente.setDireccion_cliente(request.getParameter("direccion"));		
 		cliente.setTelefono_cliente(request.getParameter("telefono"));
 		int respuesta = 0;
 		try {

@@ -12,7 +12,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import co.edu.unbosque.jsoncontroller.ClientesJSON;
+import co.edu.unbosque.jsoncontroller.ProveedoresJSON;
 import co.edu.unbosque.jsoncontroller.UsuariosJSON;
+import co.edu.unbosque.model.Clientes;
+import co.edu.unbosque.model.Proveedores;
 import co.edu.unbosque.model.Usuarios;
 
 @WebServlet("/Controlador")
@@ -120,13 +124,183 @@ public class Controlador extends HttpServlet {
 					e.printStackTrace();
 				}
 			}
-			request.getRequestDispatcher("/usuarios.jsp").forward(request, response);
+			request.getRequestDispatcher("/GUsuarios.jsp").forward(request, response);
 			break;
 		case "Clientes":
-			request.getRequestDispatcher("/clientes.jsp").forward(request, response);
+			if (accion.equals("Listar")) {
+				try {
+					ArrayList<Clientes> lista = ClientesJSON.getJSON();
+					request.setAttribute("lista", lista);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			} else if (accion.equals("Agregar")) {
+				Clientes clientes = new Clientes();
+				clientes.setCedula_cliente(Long.parseLong(request.getParameter("txtcedula")));
+				clientes.setNombre_cliente(request.getParameter("txtnombre"));
+				clientes.setEmail_cliente(request.getParameter("txtemail"));
+				clientes.setDireccion_cliente(request.getParameter("txtdireccion"));
+				clientes.setTelefono_cliente(request.getParameter("txttelefono"));
+
+				int respuesta = 0;
+				try {
+					respuesta = ClientesJSON.postJSON(clientes);
+					PrintWriter write = response.getWriter();
+					if (respuesta == 200) {
+						request.getRequestDispatcher("Controlador?menu=Clientes&accion=Listar").forward(request,
+								response);
+						
+					} else {
+						write.println("Error: " + respuesta);
+					}
+					write.close();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			} else if (accion.equals("Actualizar")) {
+				Clientes clientes = new Clientes();
+				clientes.setCedula_cliente(Long.parseLong(request.getParameter("txtcedula")));
+				clientes.setNombre_cliente(request.getParameter("txtnombre"));
+				clientes.setEmail_cliente(request.getParameter("txtemail"));
+				clientes.setDireccion_cliente(request.getParameter("txtdireccion"));
+				clientes.setTelefono_cliente(request.getParameter("txttelefono"));
+
+				int respuesta = 0;
+				try {
+					respuesta = ClientesJSON.putJSON(clientes, clientes.getCedula_cliente());
+					PrintWriter write = response.getWriter();
+
+					if (respuesta == 200) {
+						request.getRequestDispatcher("Controlador?menu=Clientes&accion=Listar").forward(request,
+								response);
+					} else {
+						write.println("Error: " + respuesta);
+					}
+					write.close();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			} else if (accion.equals("Cargar")) {
+				Long id = Long.parseLong(request.getParameter("id"));
+				try {
+					ArrayList<Clientes> lista1 = ClientesJSON.getJSON();
+//					System.out.println("Parametro: " + id);
+					for (Clientes clientes : lista1) {
+						if (clientes.getCedula_cliente() == id) {
+							request.setAttribute("clienteSeleccionado", clientes);
+							request.getRequestDispatcher("Controlador?menu=Clientes&accion=Listar").forward(request,
+									response);
+						}
+					}
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			} else if (accion.equals("Eliminar")) {
+				Long id = Long.parseLong(request.getParameter("id"));
+				int respuesta = 0;
+				try {
+					respuesta = ClientesJSON.deleteJSON(id);
+					PrintWriter write = response.getWriter();
+					if (respuesta == 200) {
+						request.getRequestDispatcher("Controlador?menu=Clientes&accion=Listar").forward(request,
+								response);
+					} else {
+						write.println("Error: " + respuesta);
+					}
+					write.close();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+			request.getRequestDispatcher("/GClientes.jsp").forward(request, response);
 			break;
 		case "Proveedores":
-			request.getRequestDispatcher("/proveedores.jsp").forward(request, response);
+			if (accion.equals("Listar")) {
+
+				try {
+					ArrayList<Proveedores> lista = ProveedoresJSON.getJSON();
+					request.setAttribute("lista", lista);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			} else if (accion.equals("Agregar")) {
+				Proveedores proveedor = new Proveedores();
+				proveedor.setNit_proveedor(Long.parseLong(request.getParameter("txtcedula")));
+				proveedor.setCiudad_proveedor(request.getParameter("txtciudad"));
+				proveedor.setDireccion_proveedor(request.getParameter("txtdireccion"));
+				proveedor.setNombre_proveedor(request.getParameter("txtnombre"));
+				proveedor.setTelefono_proveedor(Long.parseLong(request.getParameter("txttelefono")));
+				PrintWriter writer = response.getWriter();
+				int respuesta = 0;
+				try {
+					respuesta = ProveedoresJSON.postJSON(proveedor);
+					if (respuesta == 200) {
+						request.getRequestDispatcher("Controlador?menu=Proveedores&accion=Listar").forward(request,
+								response);
+
+					} else {
+						writer.println("Error: " + respuesta);
+					}
+					writer.close();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			} else if (accion.equals("Actualizar")) {
+				Proveedores proveedor = new Proveedores();
+				proveedor.setNit_proveedor(Long.parseLong(request.getParameter("txtcedula")));
+				proveedor.setCiudad_proveedor(request.getParameter("txtciudad"));
+				proveedor.setDireccion_proveedor(request.getParameter("txtdireccion"));
+				proveedor.setNombre_proveedor(request.getParameter("txtnombre"));
+				proveedor.setTelefono_proveedor(Long.parseLong(request.getParameter("txttelefono")));
+
+				int respuesta = 0;
+				try {
+					respuesta = ProveedoresJSON.putJSON(proveedor, proveedor.getNit_proveedor());
+					PrintWriter write = response.getWriter();
+
+					if (respuesta == 200) {
+						request.getRequestDispatcher("Controlador?menu=Proveedores&accion=Listar").forward(request,
+								response);
+					} else {
+						write.println("Error: " + respuesta);
+					}
+					write.close();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			} else if (accion.equals("Cargar")) {
+				Long id = Long.parseLong(request.getParameter("id"));
+				try {
+					ArrayList<Proveedores> lista1 = ProveedoresJSON.getJSON();
+					System.out.println("Parametro: " + id);
+					for (Proveedores proveedors : lista1) {
+						if (proveedors.getNit_proveedor() == id) {
+							request.setAttribute("proveedorSe", proveedors);
+							request.getRequestDispatcher("Controlador?menu=Proveedores&accion=Listar").forward(request,
+									response);
+						}
+					}
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			} else if (accion.equals("Eliminar")) {
+				Long id = Long.parseLong(request.getParameter("id"));
+				int respuesta = 0;
+				try {
+					respuesta = ProveedoresJSON.deleteJSON(id);
+					PrintWriter write = response.getWriter();
+					if (respuesta == 200) {
+						request.getRequestDispatcher("Controlador?menu=Proveedores&accion=Listar").forward(request,
+								response);
+					} else {
+						write.println("Error: " + respuesta);
+					}
+					write.close();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+			request.getRequestDispatcher("/GProveedores.jsp").forward(request, response);
 			break;
 		case "Productos":
 			request.getRequestDispatcher("/productos.jsp").forward(request, response);

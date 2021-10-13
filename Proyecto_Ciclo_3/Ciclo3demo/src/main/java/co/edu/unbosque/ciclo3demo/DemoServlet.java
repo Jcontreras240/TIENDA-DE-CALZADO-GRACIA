@@ -42,7 +42,7 @@ public class DemoServlet extends HttpServlet {
 
 			if (respuesta == 0) {
 				request.getRequestDispatcher("/login.jsp").forward(request, response);
-				System.out.println("Usuario o Contraseña invalidos");
+//				System.out.println("Usuario o Contraseña invalidos");
 			}
 
 		} catch (Exception e) {

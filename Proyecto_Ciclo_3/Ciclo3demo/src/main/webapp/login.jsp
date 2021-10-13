@@ -38,7 +38,7 @@
     <main class="form-signin">
     	<form class="form-sign" method="get" action="./DemoServlet">
         
-          <h1 class="h3 mb-4 fw-normal">Bienvenidos a la Tienda Genérica</h1>
+          <h1 class="h3 mb-4 fw-normal">Bienvenidos a la Tienda de Calzado Gracia</h1>
           <img class="mb-4" src="img/user.png" alt="" width="137" height="67">
       
           <div class="form-floating">

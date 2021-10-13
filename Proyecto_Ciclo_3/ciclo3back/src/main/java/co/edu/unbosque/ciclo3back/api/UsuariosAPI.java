@@ -20,7 +20,7 @@ public class UsuariosAPI {
         usuariosDAO.save(usuarios);
     }
     
-    @GetMapping("/consultar/{id}")
+    @RequestMapping(value="/consultar/{id}")
     public Optional<Usuarios> consultar(@PathVariable("id") Long id) {
     	return usuariosDAO.findById(id);
     }
