@@ -2,7 +2,7 @@
     pageEncoding="ISO-8859-1"%>
 <html>
 <head>
-    <title>Tienda Generica</title>
+    <title>Tienda Calzado Gracia</title>
 </head>
 <body>
 <p align="center"> CREACION DE USUARIOS</p>

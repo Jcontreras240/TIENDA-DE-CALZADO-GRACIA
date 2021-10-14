@@ -16,34 +16,34 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 import co.edu.unbosque.model.Clientes;
+import co.edu.unbosque.model.Proveedores;
 import co.edu.unbosque.model.Usuarios;
 
-public class ClientesJSON {
-	
+public class ProveedoresJSON {
 	
 	private static URL url;
 	private static String sitio = "http://localhost:5000/";
 	
-	public static ArrayList<Clientes> parsingClientes(String json) throws ParseException {
+	public static ArrayList<Proveedores> parsingProveedores(String json) throws ParseException {
 		 JSONParser jsonParser = new JSONParser();
-		 ArrayList<Clientes> lista = new ArrayList<Clientes>();
-		 JSONArray clientes = (JSONArray) jsonParser.parse(json);
-		 Iterator i = clientes.iterator();
+		 ArrayList<Proveedores> lista = new ArrayList<Proveedores>();
+		 JSONArray proveedores = (JSONArray) jsonParser.parse(json);
+		 Iterator i = proveedores.iterator();
 		 while (i.hasNext()) {
 			 JSONObject innerObj = (JSONObject) i.next();
-			 Clientes cliente = new Clientes();
-			 cliente.setCedula_cliente((Long)innerObj.get("cedula_cliente"));
-			 cliente.setDireccion_cliente(innerObj.get("direccion_cliente").toString());
-			 cliente.setEmail_cliente(innerObj.get("email_cliente").toString());
-			 cliente.setNombre_cliente(innerObj.get("nombre_cliente").toString());
-			 cliente.setTelefono_cliente(innerObj.get("telefono_cliente").toString());
-			 lista.add(cliente);
+			 Proveedores proveedor = new Proveedores();
+			 proveedor.setNit_proveedor((Long) innerObj.get("nit_proveedor"));
+			 proveedor.setDireccion_proveedor(innerObj.get("direccion_proveedor").toString());
+			 proveedor.setCiudad_proveedor(innerObj.get("ciudad_proveedor").toString());
+			 proveedor.setNombre_proveedor(innerObj.get("nombre_proveedor").toString());
+			 proveedor.setTelefono_proveedor((Long) innerObj.get("telefono_proveedor"));
+			 lista.add(proveedor);
 		 }
 		 return lista;
 	}
 	
-	public static ArrayList<Clientes> getJSON() throws IOException, ParseException{
-		url = new URL(sitio + "clientes/listar");
+	public static ArrayList<Proveedores> getJSON() throws IOException, ParseException{
+		url = new URL(sitio + "proveedores/listar");
 		HttpURLConnection http = (HttpURLConnection)url.openConnection();
 		http.setRequestMethod("GET");
 		http.setRequestProperty("Accept", "application/json");
@@ -53,14 +53,14 @@ public class ClientesJSON {
 		for (int i = 0; i<inp.length ; i++) {
 			json += (char)inp[i];
 		}
-		ArrayList<Clientes> lista = new ArrayList<Clientes>();
-		lista = parsingClientes(json);
+		ArrayList<Proveedores> lista = new ArrayList<Proveedores>();
+		lista = parsingProveedores(json);
 		http.disconnect();
 		return lista;
 	}
 	
-	public static int postJSON(Clientes cliente) throws IOException {
-		url = new URL(sitio + "clientes/guardar");
+	public static int postJSON(Proveedores proveedores) throws IOException {
+		url = new URL(sitio + "proveedores/guardar");
 		HttpURLConnection http;
 		http = (HttpURLConnection)url.openConnection();
 		try {
@@ -72,11 +72,11 @@ public class ClientesJSON {
 		http.setRequestProperty("Accept", "application/json");
 		http.setRequestProperty("Content-Type", "application/json");
 		String data = "{"
-				+ "\"cedula_cliente\":\""+ cliente.getCedula_cliente()
-				+"\",\"direccion_cliente\": \""+cliente.getDireccion_cliente()
-				+"\",\"email_cliente\": \""+cliente.getEmail_cliente()
-				+"\",\"nombre_cliente\":\""+cliente.getNombre_cliente()
-				+"\",\"telefono_cliente\":\""+cliente.getTelefono_cliente()
+				+ "\"nit_proveedor\":\""+ proveedores.getNit_proveedor()
+				+"\",\"direccion_proveedor\": \""+proveedores.getDireccion_proveedor()
+				+"\",\"ciudad_proveedor\": \""+proveedores.getCiudad_proveedor()
+				+"\",\"nombre_proveedor\":\""+proveedores.getNombre_proveedor()
+				+"\",\"telefono_proveedor\":\""+proveedores.getTelefono_proveedor()
 				+ "\"}";
 		byte[] out = data.getBytes(StandardCharsets.UTF_8);
 		OutputStream stream = http.getOutputStream();
@@ -85,12 +85,11 @@ public class ClientesJSON {
 		http.disconnect();
 		return respuesta;
 	}
-	
 
-public static int putJSON(Clientes cliente, Long id) throws IOException {
+public static int putJSON(Proveedores proveedores, Long id) throws IOException {
 		
 		
-		url = new URL(sitio+"clientes/actualizar");
+		url = new URL(sitio+"proveedores/actualizar");
 		HttpURLConnection http;
 		http = (HttpURLConnection)url.openConnection();
 		
@@ -105,11 +104,11 @@ public static int putJSON(Clientes cliente, Long id) throws IOException {
 		http.setRequestProperty("Content-Type", "application/json");
 		
 		String data = "{"
-				+ "\"cedula_cliente\":\""+ cliente.getCedula_cliente()
-				+"\",\"direccion_cliente\": \""+cliente.getDireccion_cliente()
-				+"\",\"email_cliente\": \""+cliente.getEmail_cliente()
-				+"\",\"nombre_cliente\":\""+cliente.getNombre_cliente()
-				+"\",\"telefono_cliente\":\""+cliente.getTelefono_cliente()
+				+ "\"nit_proveedor\":\""+ proveedores.getNit_proveedor()
+				+"\",\"direccion_proveedor\": \""+proveedores.getDireccion_proveedor()
+				+"\",\"ciudad_proveedor\": \""+proveedores.getCiudad_proveedor()
+				+"\",\"nombre_proveedor\":\""+proveedores.getNombre_proveedor()
+				+"\",\"telefono_proveedor\":\""+proveedores.getTelefono_proveedor()
 				+ "\"}";
 		byte[] out = data.getBytes(StandardCharsets.UTF_8);
 		OutputStream stream = http.getOutputStream();
@@ -123,7 +122,7 @@ public static int putJSON(Clientes cliente, Long id) throws IOException {
 
 public static int deleteJSON(Long id) throws IOException {
 
-	url = new URL(sitio + "clientes/eliminar/" + id);
+	url = new URL(sitio + "proveedores/eliminar/" + id);
 	HttpURLConnection http;
 	http = (HttpURLConnection) url.openConnection();
 
@@ -143,8 +142,8 @@ public static int deleteJSON(Long id) throws IOException {
 }
 
 
-public static ArrayList<Clientes> findByIdJSON(Long id) throws IOException, ParseException{
-	url = new URL(sitio + "clientes/consultar/"+id);
+public static ArrayList<Proveedores> findByIdJSON(Long id) throws IOException, ParseException{
+	url = new URL(sitio + "proveedores/consultar/"+id);
 	HttpURLConnection http = (HttpURLConnection)url.openConnection();
 	http.setRequestMethod("GET");
 	http.setRequestProperty("Accept", "application/json");
@@ -154,11 +153,10 @@ public static ArrayList<Clientes> findByIdJSON(Long id) throws IOException, Pars
 	for (int i = 0; i<inp.length ; i++) {
 		json += (char)inp[i];
 	}
-	ArrayList<Clientes> lista = new ArrayList<Clientes>();
-	lista = parsingClientes(json);
+	ArrayList<Proveedores> lista = new ArrayList<Proveedores>();
+	lista = parsingProveedores(json);
 	http.disconnect();
 	return lista;
 }
 
-	
 }

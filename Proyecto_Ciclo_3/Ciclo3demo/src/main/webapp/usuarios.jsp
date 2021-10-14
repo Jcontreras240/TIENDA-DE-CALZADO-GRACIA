@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tienda Genérica</title>
+    <title>Calzado Gracia | Usuarios</title>
 
     <!-- Bootstrap core CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
@@ -16,10 +16,10 @@
         <div class="col">
             <div class="row">
                 <div class="col-md-12 col-lg-12 offset-lg-0" style="background: var(--bs-secondary);color: var(--bs-gray-100);">
-                    <h1>Mantenimiento Usuarios</h1>
+                    <h1>Usuarios</h1>
                 </div>
             </div>
-            <div class="row">
+            
             <form method="get" action="./usuarios">
                 <div class="row">
                     <div class="col">
@@ -69,7 +69,6 @@
                     <div class="col text-center"><button class="btn btn-primary" type="button submit" name="eliminar" style="background: var(--bs-secondary);border-color: var(--bs-secondary);">Borrar</button></div>
                 </div>
             </form>
-           <div>
         </div>
     </div>
 

@@ -2,16 +2,16 @@ package co.edu.unbosque.model;
 
 public class Clientes {
 	
-	private String cedula_cliente;
+	private Long cedula_cliente;
+	private String nombre_cliente;
 	private String direccion_cliente;
 	private String email_cliente;
-	private String nombre_cliente;
 	private String telefono_cliente;
 	
 	public Clientes() {
 	}
 
-	public Clientes(String cedula_cliente, 
+	public Clientes(Long cedula_cliente, 
 					String direccion_cliente, 
 					String email_cliente, 
 					String nombre_cliente,
@@ -23,11 +23,11 @@ public class Clientes {
 		this.telefono_cliente = telefono_cliente;
 	}
 
-	public String getCedula_cliente() {
+	public Long getCedula_cliente() {
 		return cedula_cliente;
 	}
 
-	public void setCedula_cliente(String cedula_cliente) {
+	public void setCedula_cliente(Long cedula_cliente) {
 		this.cedula_cliente = cedula_cliente;
 	}
 

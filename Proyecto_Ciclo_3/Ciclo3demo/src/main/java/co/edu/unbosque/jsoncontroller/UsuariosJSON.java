@@ -136,5 +136,25 @@ public static int putJSON(Usuarios usuario, Long id) throws IOException {
 		http.disconnect();
 		return respuesta;
 	}
+	
+	
+	public static ArrayList<Usuarios> findByIdJSON(Long id) throws IOException, ParseException{
+		url = new URL(sitio + "usuarios/consultar/"+id);
+		HttpURLConnection http = (HttpURLConnection)url.openConnection();
+		http.setRequestMethod("GET");
+		http.setRequestProperty("Accept", "application/json");
+		InputStream respuesta = http.getInputStream();
+		byte[] inp = respuesta.readAllBytes();
+		String json = "";
+		for (int i = 0; i<inp.length ; i++) {
+			json += (char)inp[i];
+		}
+		ArrayList<Usuarios> lista = new ArrayList<Usuarios>();
+		lista = parsingUsuarios(json);
+		http.disconnect();
+		return lista;
+	}
+	
+	
 
 }
