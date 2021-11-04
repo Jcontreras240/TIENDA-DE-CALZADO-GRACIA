@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import co.edu.unbosque.ciclo3back.dao.Detalle_VentaDAO;
+import co.edu.unbosque.ciclo3back.dao.Detalle_VentasDAO;
 import co.edu.unbosque.ciclo3back.model.Detalle_Venta;
 
 @RestController
@@ -14,7 +14,7 @@ import co.edu.unbosque.ciclo3back.model.Detalle_Venta;
 public class Detalle_VentaAPI {
 	
 	@Autowired
-	private Detalle_VentaDAO detalle_ventaDAO;
+	private Detalle_VentasDAO detalle_ventasDAO;
 	//solo se va a usar en el CRUD ""GUARDAR"
 	
 	@PostMapping("/guardar")

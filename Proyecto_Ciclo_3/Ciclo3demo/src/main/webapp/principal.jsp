@@ -3,90 +3,81 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
-	crossorigin="anonymous">
-<meta charset="ISO-8859-1">
-<title>Pagina Principal</title>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+<title>CALZADO GRACIA - Tienda Virtual</title>
+<link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400|Roboto:300,400,700">
+<link rel="stylesheet" href="assets/css/index.css">
+<link rel="stylesheet" href="css/bg.css">
 </head>
+
 <body>
-	<div class="container">
-		<div class="col">
-			<div class="row">
-				<div class="col-md-12 col-lg-12 offset-lg-0 bg-info"
-					style="background: var(- -bs-secondary); color: var(- -bs-gray-100);">
-					<h1>Tienda Calzado Gracia</h1>
+	<!-- Start: Black Navbar -->
+	<nav
+		class="navbar navbar-light navbar-expand-md navbar-fixed-top navigation-clean-button"
+		style="background: rgb(34, 34, 34); border-radius: 20; border-top-left-radius: 20; border-top-right-radius: 20; border-bottom-right-radius: 20; border-bottom-left-radius: 20; border-style: none; padding-top: 0; padding-bottom: 10px;">
+		<div class="container">
+			<div>
+				<a class="navbar-brand" href="inicio.jsp"><span><img
+						src="assets/img/logo.png" width="70px" height="70px">&nbsp;Calzado Gracia</span> </a>
+			</div>
+			
+			<p class="ms-auto actions">
+			<div class="dropdown">
+				<button class="btn btn-primary" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+								aria-expanded="false" style= "border-radius: 10px" >${usuario.getNombre_usuario()}</button>
+							<div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+								<a class="dropdown-item" href="#"><img src="img/user.png" width="40" alt="40"></a> <a
+									class="dropdown-item" href="#">${usuario.getUsuario()}</a>
+								<a class="dropdown-item" href="#">${usuario.getEmail_usuario()}</a>
+								<div class="dropdown-divider"></div>
+					<a class=" action-button" role="button"
+					href="index.jsp"
+					style="color: rgba(0, 0, 0, 0.9); background: var(- -bs-gray-200); border-radius: 10px; border-style: solid; border-color: rgba(0, 0, 0, 0.9); font-size: 16px; padding: 5px 8px;">Cerrar
+					Sesión</a>
 				</div>
 			</div>
-			<div class="row" class="collapse" id="navbarToggleExternalContent">
-				<nav class="navbar navbar-expand-lg navbar-light bg-info">
-					<div class="container-fluid">
-
-						<div class="collapse navbar-collapse" id="navbarNav">
-							<ul class="navbar-nav">
-
-								<li class="nav-item">
-								<a style="margin-left: 10px; border: none" class="btn btn-outline-light"
-									href="Controlador?menu=Usuarios&accion=Listar" target="myFrame">Usuarios</a>
-								</li>
-								<li class="nav-item">
-								<a style="margin-left: 10px; border: none" class="btn btn-outline-light"
-									href="Controlador?menu=Clientes&accion=Listar" target="myFrame">Clientes</a>
-								</li>
-								<li class="nav-item"><a
-									style="margin-left: 10px; border: none" class="btn btn-outline-light"
-									href="Controlador?menu=Proveedores&accion=Listar"target="myFrame">Proveedores</a></li>
-								<li class="nav-item">
-								<a	style="margin-left: 10px; border: none" class="btn btn-outline-light"
-									href="Controlador?menu=Productos&accion=Listar"	target="myFrame">Productos</a></li>
-								<li class="nav-item">
-								<a	style="margin-left: 10px; border: none" class="btn btn-outline-light" href="Controlador?menu=Ventas"
-									target="myFrame">Ventas</a></li>
-								<li class="nav-item">
-								<a	style="margin-left: 10px; border: none" class="btn btn-outline-light" href="Controlador?menu=Reportes"
-									target="myFrame">Reportes</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="dropdown">
-						<button class="btn btn-outline-light dropdown-toggle"
-							type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
-							aria-expanded="false">${usuario.getNombre_usuario()}</button>
-						<div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-							<a class="dropdown-item" href="#"><img src="imagen/login.jpg"
-								width="40" alt="40"></a> <a class="dropdown-item" href="#">${usuario.getUsuario()}</a>
-							<a class="dropdown-item" href="#">${usuario.getEmail_usuario()}</a>
-							<div class="dropdown-divider"></div>
-							<form class="dropdown-item" method="POST" action="#">
-								<button class="btn btn-danger center-block" type="submit"
-									name="accion" value="Salir">Cerrar Sesion</button>
-							</form>
-
-						</div>
-					</div>
-				</nav>
+				
+			</p>
+		</div>
+	</nav>
+	<!-- End: Black Navbar -->
+	<!-- Start: Black Navbar -->
+	<nav
+		class="navbar navbar-light navbar-expand-md navbar-fixed-top navigation-clean-button"
+		style="background: rgb(34, 34, 34); border-radius: 20; border-top-left-radius: 20; border-top-right-radius: 20; border-bottom-right-radius: 20; border-bottom-left-radius: 20; border-style: none; padding-top: 0; padding-bottom: 10px;">
+		<div class="container">
+			<button data-bs-toggle="collapse" class="navbar-toggler"
+				data-bs-target="#navcol-1">
+				<span class="visually-hidden">Toggle navigation</span><span
+					class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navcol-1"
+				style="color: rgb(255, 255, 255);">
+				<ul class="navbar-nav nav-right">
+					<li class="nav-item"><a class="nav-link active"
+						href="Controlador?menu=Usuarios&accion=Listar"" style="color: rgba(224, 217, 217, 0.9);" target="myFrame">Usuarios</a></li>
+					<li class="nav-item"><a class="nav-link" href="Controlador?menu=Clientes&accion=Listar" style="color: rgba(224, 217, 217, 0.9);" target="myFrame">Clientes</a></li>
+					<li class="nav-item"><a class="nav-link" href="Controlador?menu=Proveedores&accion=Listar" style="color: rgba(224, 217, 217, 0.9);"target="myFrame">Proveedores</a></li>
+					<li class="nav-item"><a class="nav-link" href="Controlador?menu=Productos&accion=Listar" style="color: rgba(224, 217, 217, 0.9);"target="myFrame">Productos</a></li>
+					<li class="nav-item"><a class="nav-link" href="Controlador?menu=Ventas&accion=default&UsuarioActivo=${usuario.getCedula_usuario()}"
+						style="color: rgba(224, 217, 217, 0.9);"target="myFrame">Ventas</a></li>
+					<li class="nav-item"><a class="nav-link" href="Controlador?menu=Reportes"
+						style="color: rgba(224, 217, 217, 0.9);"target="myFrame">Reportes</a></li>
 			</div>
 		</div>
-	</div>
+	</nav>
+	<!-- End: Black Navbar -->
 	<div class="m-4" style="height: 550px;">
 		<iframe style="height: 100%; width: 100%; border: none" name="myFrame"></iframe>
 	</div>
-
-	<!-- Optional JavaScript -->
-	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-		crossorigin="anonymous"></script>
+	<hr>
 	<script
-		src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-		integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-		crossorigin="anonymous"></script>
-	<script
-		src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-		integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-		crossorigin="anonymous"></script>
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-

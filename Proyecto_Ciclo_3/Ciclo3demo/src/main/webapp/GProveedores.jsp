@@ -33,8 +33,8 @@
 							<form class="form-sign" method="get" action="Controlador">
 
 								<div class="form-group">
-									<input type="hidden" name="menu" value="Clientes"> <label>NIT:</label>
-									<input type="text" name="txtcedula" class="form-control"
+									<input type="hidden" name="menu" value="Proveedores"> <label>NIT:</label>
+									<input type="text" name="txtnit" class="form-control"
 										value="${proveedoresSeleccionado.getNit_proveedor()}">
 								</div>
 								<div class="form-group">
@@ -43,7 +43,7 @@
 										value="${proveedoresSeleccionado.getDireccion_proveedor()}">
 								</div>
 								<div class="form-group">
-									<label>Ciudad:</label> <input type="text" name="txtemail"
+									<label>Ciudad:</label> <input type="text" name="txtciudad"
 										class="form-control"
 										value="${proveedoresSeleccionado.getCiudad_proveedor()}">
 								</div>
@@ -87,9 +87,9 @@
 								<td><%=proveedores.getDireccion_proveedor()%></td>
 								<td><%=proveedores.getTelefono_proveedor()%></td>
 								<td><a class="btn btn-warning"
-									href="Controlador?menu=Clientes&accion=Cargar&id=<%=proveedores.getNit_proveedor()%>">Editar</a>
+									href="Controlador?menu=Proveedores&accion=Cargar&id=<%=proveedores.getNit_proveedor()%>">Editar</a>
 									<a class="btn btn-danger"
-									href="Controlador?menu=Clientes&accion=Eliminar&id=<%=proveedores.getNit_proveedor()%>">Eliminar</a>
+									href="Controlador?menu=Proveedores&accion=Eliminar&id=<%=proveedores.getNit_proveedor()%>">Eliminar</a>
 								</td>
 							</tr>
 							<%

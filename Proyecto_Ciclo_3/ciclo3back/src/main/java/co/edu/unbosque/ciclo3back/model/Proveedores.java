@@ -8,23 +8,24 @@ public class Proveedores {
 	
 	@Id
 	private Long nit_proveedor;
-	private String direccion_proveedor;
-	private String ciudad_proveedor;
+	
 	private String nombre_proveedor;
+	private String ciudad_proveedor;
+	private String direccion_proveedor;
 	private String telefono_proveedor;
 	
 	public Proveedores() {
 	}
 
 	public Proveedores(Long nit_proveedor, 
-					String direccion_proveedor, 
-					String ciudad_proveedor, 
 					String nombre_proveedor,
+					String ciudad_proveedor,
+					String direccion_proveedor, 
 					String telefono_proveedor) {
 		this.nit_proveedor = nit_proveedor;
-		this.direccion_proveedor = direccion_proveedor;
-		this.ciudad_proveedor = ciudad_proveedor;
 		this.nombre_proveedor = nombre_proveedor;
+		this.ciudad_proveedor = ciudad_proveedor;
+		this.direccion_proveedor = direccion_proveedor;
 		this.telefono_proveedor = telefono_proveedor;
 	}
 
@@ -67,11 +68,10 @@ public class Proveedores {
 	public void setTelefono_proveedor(String telefono_proveedor) {
 		this.telefono_proveedor = telefono_proveedor;
 	}
-
 	@Override
 	public String toString() {
-		return "Proveedores [nit_proveedor=" + nit_proveedor + ", direccion_proveedor=" + direccion_proveedor
-				+ ", ciudad_proveedor=" + ciudad_proveedor + ", nombre_proveedor=" + nombre_proveedor + ", telefono_proveedor="
+		return "Proveedores [nit_proveedor=" + nit_proveedor + ", nombre_proveedor=" + nombre_proveedor
+				+ ", direccion_proveedor=" + direccion_proveedor + ", ciudad_proveedor=" + ciudad_proveedor + ", telefono_proveedor="
 				+ telefono_proveedor + "]";
 	}
 	

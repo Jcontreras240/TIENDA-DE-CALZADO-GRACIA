@@ -1,0 +1,64 @@
+body{
+    margin: 0;
+    padding: 0;
+    
+    font-family: sans-serif;
+}
+hr{
+    height: 20px;
+    background-color: black;
+    border-color: red;
+}
+.col{
+    margin: 0;
+    padding: 0 0 10px;
+    
+}
+.col .col-md-12 {
+    margin: 0x;
+    padding: 0;
+    width: 100%;
+    height: 50px;
+    font-weight: 900;
+    color:black;
+    background: linear-gradient(yellow,violet);
+    
+    box-sizing: border-box;
+    border-radius: 3px;
+}
+    
+.col .col-md-12 .avatar{
+    background-color:transparent;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.col .col-md-12 .title1{
+    margin-left: 5%;
+}
+.col .nav-item{
+    border: none;
+    outline: none;
+    margin-right: 10px;
+    height: 40px;
+    background-color: rgb(185, 102, 196);
+    font-weight: 500;
+    border-radius: 5px;
+}
+.col .nav-item .btn {
+    color:rgb(245, 243, 243) solid;
+    font-size: 18px;
+    font-weight: 500;
+}
+.col .dropdown .btn{
+    margin-left: 0%;
+    font-size: 18px;
+   color:black;
+    
+}
+.col .dropdown-item .btn{
+    margin-left: 5%;
+    color: rgb(255, 255, 255);
+    background-color: rgb(236, 44, 44);
+    
+}

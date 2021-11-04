@@ -23,6 +23,7 @@ public class ProveedoresJSON {
 	
 	private static URL url;
 	private static String sitio = "http://localhost:5000/";
+	//private static String sitio = "http://localhost:8080/back_TiendaDeCalzado 0.0.1-SNAPSHOT/";
 	
 	public static ArrayList<Proveedores> parsingProveedores(String json) throws ParseException {
 		 JSONParser jsonParser = new JSONParser();
@@ -33,10 +34,10 @@ public class ProveedoresJSON {
 			 JSONObject innerObj = (JSONObject) i.next();
 			 Proveedores proveedor = new Proveedores();
 			 proveedor.setNit_proveedor((Long) innerObj.get("nit_proveedor"));
-			 proveedor.setDireccion_proveedor(innerObj.get("direccion_proveedor").toString());
-			 proveedor.setCiudad_proveedor(innerObj.get("ciudad_proveedor").toString());
 			 proveedor.setNombre_proveedor(innerObj.get("nombre_proveedor").toString());
-			 proveedor.setTelefono_proveedor((Long) innerObj.get("telefono_proveedor"));
+			 proveedor.setCiudad_proveedor(innerObj.get("ciudad_proveedor").toString());
+			 proveedor.setDireccion_proveedor(innerObj.get("direccion_proveedor").toString());
+			 proveedor.setTelefono_proveedor(innerObj.get("telefono_proveedor").toString());
 			 lista.add(proveedor);
 		 }
 		 return lista;
@@ -73,9 +74,9 @@ public class ProveedoresJSON {
 		http.setRequestProperty("Content-Type", "application/json");
 		String data = "{"
 				+ "\"nit_proveedor\":\""+ proveedores.getNit_proveedor()
-				+"\",\"direccion_proveedor\": \""+proveedores.getDireccion_proveedor()
-				+"\",\"ciudad_proveedor\": \""+proveedores.getCiudad_proveedor()
 				+"\",\"nombre_proveedor\":\""+proveedores.getNombre_proveedor()
+				+"\",\"ciudad_proveedor\": \""+proveedores.getCiudad_proveedor()
+				+"\",\"direccion_proveedor\": \""+proveedores.getDireccion_proveedor()
 				+"\",\"telefono_proveedor\":\""+proveedores.getTelefono_proveedor()
 				+ "\"}";
 		byte[] out = data.getBytes(StandardCharsets.UTF_8);
@@ -105,9 +106,9 @@ public static int putJSON(Proveedores proveedores, Long id) throws IOException {
 		
 		String data = "{"
 				+ "\"nit_proveedor\":\""+ proveedores.getNit_proveedor()
-				+"\",\"direccion_proveedor\": \""+proveedores.getDireccion_proveedor()
-				+"\",\"ciudad_proveedor\": \""+proveedores.getCiudad_proveedor()
 				+"\",\"nombre_proveedor\":\""+proveedores.getNombre_proveedor()
+				+"\",\"ciudad_proveedor\": \""+proveedores.getCiudad_proveedor()
+				+"\",\"direccion_proveedor\": \""+proveedores.getDireccion_proveedor()
 				+"\",\"telefono_proveedor\":\""+proveedores.getTelefono_proveedor()
 				+ "\"}";
 		byte[] out = data.getBytes(StandardCharsets.UTF_8);

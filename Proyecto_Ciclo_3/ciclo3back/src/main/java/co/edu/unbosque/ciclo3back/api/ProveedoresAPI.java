@@ -33,8 +33,8 @@ public class ProveedoresAPI {
     }
 
     @PutMapping("/actualizar")
-    public void actualizar(@RequestBody Proveedores usuarios) {
-    	proveedoresDAO.save(usuarios);
+    public void actualizar(@RequestBody Proveedores proveedores) {
+    	proveedoresDAO.save(proveedores);
     }
 
 }

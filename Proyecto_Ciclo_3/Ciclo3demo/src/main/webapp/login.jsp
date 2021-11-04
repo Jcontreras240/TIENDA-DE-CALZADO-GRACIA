@@ -1,61 +1,67 @@
-<!DOCTYPE html>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<html lang="es">
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iniciar Sesión</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="generator" content="Hugo 0.88.1">
+  <title>Iniciar Sesión - CALZADO GRACIA</title>
+  <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
 
-    <!-- Bootstrap core CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    
-    <style>
-        .bd-placeholder-img {
-          font-size: 1.125rem;
-          text-anchor: middle;
-          -webkit-user-select: none;
-          -moz-user-select: none;
-          user-select: none;
-        }
-  
-        @media (min-width: 768px) {
-          .bd-placeholder-img-lg {
-            font-size: 3.5rem;
-          }
-        }
-      </style>
-  
-      
-      <!-- Custom styles for this template -->
-      <link href="css/signin.css" rel="stylesheet">
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/sign-in/">
 
+
+
+  <!-- Bootstrap core CSS -->
+  <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+
+
+  <!-- Custom styles for this template -->
+  <link href="css/login.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/bg.css">
 </head>
 
 <body class="text-center">
-  
-    <main class="form-signin">
-    	<form class="form-sign" method="get" action="./DemoServlet">
-        
-          <h1 class="h3 mb-4 fw-normal">Bienvenidos a la Tienda de Calzado Gracia</h1>
-          <img class="mb-4" src="img/user.png" alt="" width="137" height="67">
-      
-          <div class="form-floating">
-            <input type="text" class="form-control" id="txtusuario" name="txtusuario" placeholder="">
-            <label for="floatingInput">Usuario</label>
-          </div>
-          <div class="form-floating">
-            <input type="password" class="form-control" id="txtpassword" name="txtpassword" placeholder="">
-            <label for="floatingPassword">Contraseña</label>
-          </div>
+    <main class="form-signin bg-dark">
+      <form class="form-sign" method="get" action="./DemoServlet">
+        <img class="mb-1" src="img/logo.png" alt="" width="200" height="200">
+        <h1 class="h3 mb-3 fw-normal text-light">Iniciar Sesión</h1>
 
-          <input type="submit" name="accion" value="Ingresar" class="btn btn-primary">
-          <a href="#" class="btn btn-secondary" type="submit">Cancelar</a>
-        </form>
-      </main>
+        <div class="form-floating mb-2">
+          <input type="text" class="form-control" id="txtusuario" placeholder="Usuario" name="txtusuario">
+          <label for="usuario">Usuario</label>
+        </div>
+        <div class="form-floating">
+          <input type="password" class="form-control" id="txtpassword" placeholder="Password" name="txtpassword">
+          <label for="password">Contraseña</label>
+        </div>
 
+        <div class="checkbox mb-3 text-light">
+        </div>
+        <button class="w-50 btn btn-lg btn-outline-light" type="submit" name="accion" value="Ingresar">Iniciar Sesión</button>
+        <button class="w-50 btn btn-lg btn-outline-light mt-3" type="submit" name="accion" value="Cancelar">Cancelar</button>
+        <p class="mt-5 mb-3 text-muted">CALZADO GRACIA &copy; 2021</p>
+      </form>
+    </main>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
 </body>
 </html>

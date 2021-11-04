@@ -39,7 +39,7 @@ public class ProductosServlet extends HttpServlet {
 
 		String listar = request.getParameter("Listar");
 		String agregar = request.getParameter("crear");
-		String eliminar = request.getParameter("eliminar");
+		
 		if (agregar != null) {
 			agregarProducto(request, response);
 		}
@@ -60,11 +60,12 @@ public class ProductosServlet extends HttpServlet {
 
 	public void agregarProducto(HttpServletRequest request, HttpServletResponse response) {
 		Productos producto = new Productos();
-		producto.setId(Long.parseLong(request.getParameter("id")));
-		producto.setNombre_producto(request.getParameter("nombre_producto"));
-		producto.setPrecio_Compra(Double.parseDouble(request.getParameter("precio_compra")));
-		producto.setIva_Compra(Double.parseDouble(request.getParameter("iva_compra")));
-		producto.setPrecio_Venta(Double.parseDouble(request.getParameter("precio_venta")));
+		producto.setCodigo_producto(Long.parseLong(request.getParameter("txtcodigoproducto")));
+		producto.setIva_Compra(Double.parseDouble(request.getParameter("txtivacompra")));
+		producto.setNit_proveedor(Long.parseLong(request.getParameter("txtnitproveedor")));
+		producto.setNombre_producto(request.getParameter("txtnombreproducto"));
+		producto.setPrecio_Compra(Double.parseDouble(request.getParameter("txtpreciocompra")));
+		producto.setPrecio_Venta(Double.parseDouble(request.getParameter("txtprecioventa")));
 		int respuesta = 0;
 		try {
 			respuesta = ProductosJSON.postJSON(producto);
@@ -91,5 +92,8 @@ public class ProductosServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 	}
+	
+	
+	
 
 }

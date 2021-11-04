@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tienda Genérica</title>
+    <title>Proveedores</title>
+    <link rel="stylesheet" href="css/proveedores.css">
 
     <!-- Bootstrap core CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <!--link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous"-->
 
 </head>
 <body>
@@ -15,11 +16,11 @@
     <div class="container">
         <div class="col">
             <div class="row">
-                <div class="col-md-12 col-lg-12 offset-lg-0" style="background: var(--bs-secondary);color: var(--bs-gray-100);">
-                    <h1>Tienda Genérica</h1>
+                <div class="col-md-12">
+                    <h1><img class="avatar" src="img/logo.png" alt="logo de CG">Proveedores</h1>
                 </div>
             </div>
-            <div class="row">
+            <!--div class="row">
                 <div class="col d-inline-block" style="border-style: solid;border-color: var(--bs-secondary);">
                     <nav class="navbar navbar-light navbar-expand-md d-block">
                         <div class="container-fluid"><button data-bs-toggle="collapse" data-bs-target="#navcol-1" class="navbar-toggler"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
@@ -36,24 +37,24 @@
                         </div>
                     </nav>
                 </div>
-            </div>
-            <form>
-                <div class="row">
+            </div-->
+            <form  method="get" action="./proveedores">
+                
                     <div class="col">
                         <div class="table-responsive">
                             <table class="table">
                                 <tbody>
                                     <tr>
-                                        <td><label class="form-label">NIT</label></td>
-                                        <td><input type="text" class="form-control" /></td>
+                                        <td><label class="form-label">NIT:</label></td>
+                                        <td><input type="text" class="form-control1" placeholder="Nit de la empresa"/></td>
                                     </tr>
                                     <tr>
-                                        <td><label class="form-label">Nombre Proveedor</label></td>
-                                        <td><input type="text" class="form-control" /></td>
+                                        <td><label class="form-label">Nombre Proveedor:</label></td>
+                                        <td><input type="text" class="form-control" placeholder="Nombre del proveedor"/></td>
                                     </tr>
                                     <tr>
-                                        <td><label class="form-label">Dirección</label></td>
-                                        <td><input type="text" class="form-control" /></td>
+                                        <td><label class="form-label">DirecciÃ³n:</label></td>
+                                        <td><input type="text" class="form-control" placeholder="Direccion"/></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -67,23 +68,23 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td><label class="form-label">Teléfono</label></td>
-                                        <td><input type="text" class="form-control" /></td>
+                                        <td><label class="form-label">TelÃ³fono:</label></td>
+                                        <td><input type="text" class="form-control2" placeholder="TelÃ©fono" /></td>
                                     </tr>
                                     <tr>
-                                        <td><label class="form-label">Ciudad</label></td>
-                                        <td><input type="password" class="form-control" /></td>
+                                        <td><label class="form-label">Ciudad:</label></td>
+                                        <td><input type="text" class="form-control2" placeholder="Ciudad" /></td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
                     </div>
-                </div>
-                <div class="row botones">
-                    <div class="col text-center"><button class="btn btn-primary" type="button submit" style="background: var(--bs-secondary);border-color: var(--bs-secondary);">Consultar</button></div>
-                    <div class="col text-center"><button class="btn btn-primary" type="button submit" style="background: var(--bs-secondary);border-color: var(--bs-secondary);">Crear</button></div>
-                    <div class="col text-center"><button class="btn btn-primary" type="button submit" style="background: var(--bs-secondary);border-color: var(--bs-secondary);">Actualizar</button></div>
-                    <div class="col text-center"><button class="btn btn-primary" type="button submit" style="background: var(--bs-secondary);border-color: var(--bs-secondary);">Borrar</button></div>
+                
+                <div class="row-botones">
+                    <button class="btn1 btn-primary" type="button submit" name="Consultar">Consultar</button>
+                    <button class="btn btn-primary" type="button submit" style="background:rgb(56, 230, 79); color:black" name="Crear">Crear</button>
+                    <button class="btn btn-primary" type="button submit" name="Actualizar">Actualizar</button>
+                    <button class="btn btn-primary" type="button submit" name="Borrar">Borrar</button>
                 </div>
             </form>
         </div>
