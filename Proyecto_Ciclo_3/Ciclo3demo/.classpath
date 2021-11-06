@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src/main/java"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
@@ -13,32 +13,32 @@
 			<attribute name="owner.project.facets" value="jst.web"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/GUECHA/eclipse-workspace/Proyecto_Sprint_3/Proyecto_Sprint_3/Proyecto_Ciclo_3/Ciclo3demo/src/main/webapp/WEB-INF/lib/jakarta.servlet-api-4.0.2.jar">
+	<classpathentry kind="lib" path="C:/Users/Jhonatan Contreras/Desktop/mintic 4/TIENDA-DE-CALZADO-GRACIA/Proyecto_Ciclo_3/Ciclo3demo/src/main/webapp/WEB-INF/lib/jakarta.servlet-api-4.0.2.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/GUECHA/eclipse-workspace/Proyecto_Sprint_3/Proyecto_Sprint_3/Proyecto_Ciclo_3/Ciclo3demo/src/main/webapp/WEB-INF/lib/javax.servlet.jsp.jstl-api-1.2.2.jar">
+	<classpathentry kind="lib" path="C:/Users/Jhonatan Contreras/Desktop/mintic 4/TIENDA-DE-CALZADO-GRACIA/Proyecto_Ciclo_3/Ciclo3demo/src/main/webapp/WEB-INF/lib/javax.servlet.jsp.jstl-api-1.2.2.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/GUECHA/eclipse-workspace/Proyecto_Sprint_3/Proyecto_Sprint_3/Proyecto_Ciclo_3/Ciclo3demo/src/main/webapp/WEB-INF/lib/json-simple-1.1.1.jar">
+	<classpathentry kind="lib" path="C:/Users/Jhonatan Contreras/Desktop/mintic 4/TIENDA-DE-CALZADO-GRACIA/Proyecto_Ciclo_3/Ciclo3demo/src/main/webapp/WEB-INF/lib/json-simple-1.1.1.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/GUECHA/eclipse-workspace/Proyecto_Sprint_3/Proyecto_Sprint_3/Proyecto_Ciclo_3/Ciclo3demo/src/main/webapp/WEB-INF/lib/mysql-connector-java-5.1.24-bin.jar">
+	<classpathentry kind="lib" path="C:/Users/Jhonatan Contreras/Desktop/mintic 4/TIENDA-DE-CALZADO-GRACIA/Proyecto_Ciclo_3/Ciclo3demo/src/main/webapp/WEB-INF/lib/servlet-api.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/GUECHA/eclipse-workspace/Proyecto_Sprint_3/Proyecto_Sprint_3/Proyecto_Ciclo_3/Ciclo3demo/src/main/webapp/WEB-INF/lib/servlet-api.jar">
+	<classpathentry kind="lib" path="C:/Users/Jhonatan Contreras/Desktop/mintic 4/TIENDA-DE-CALZADO-GRACIA/Proyecto_Ciclo_3/Ciclo3demo/src/main/webapp/WEB-INF/lib/mysql-connector-java-5.1.24-bin.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/GUECHA/eclipse-workspace/Proyecto_Sprint_3/Proyecto_Sprint_3/Proyecto_Ciclo_3/Ciclo3demo/src/main/webapp/WEB-INF/lib/jstl-1.2.jar">
+	<classpathentry kind="lib" path="C:/Users/Jhonatan Contreras/Desktop/mintic 4/TIENDA-DE-CALZADO-GRACIA/Proyecto_Ciclo_3/Ciclo3demo/src/main/webapp/WEB-INF/lib/jstl-1.2.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
